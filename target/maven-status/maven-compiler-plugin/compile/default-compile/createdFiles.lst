@@ -1,0 +1,4 @@
+com\rd\ws\filter\RestAuthenticationFilter.class
+com\rd\ws\services\DataServices.class
+com\rd\ws\services\Worldws.class
+com\rd\ws\filter\AuthenticationService.class

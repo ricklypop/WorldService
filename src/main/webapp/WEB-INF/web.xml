@@ -1,7 +1,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee">
-	<display-name>Leader Board Web Services</display-name>
+	<display-name>World Service Web Services</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
@@ -12,19 +12,27 @@
 	</welcome-file-list>
 
 	<servlet>
-		<servlet-name>Leader Board Web Services</servlet-name>
+		<servlet-name>World Service Web Services</servlet-name>
 		<servlet-class>org.glassfish.jersey.servlet.ServletContainer
 		</servlet-class>
 		<init-param>
 			<param-name>jersey.config.server.provider.packages</param-name>
-			<param-value>com.rd.lbs.services,com.fasterxml.jackson.jaxrs.json</param-value>
+			<param-value>com.rd.ws.services,com.fasterxml.jackson.jaxrs.json</param-value>
 
 			
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Leader Board Web Services</servlet-name>
+		<servlet-name>World Service Web Services</servlet-name>
 		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
+	<filter>
+		<filter-name>AuthenticationFilter</filter-name>
+		<filter-class>com.rd.ws.filter.RestAuthenticationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/ws/*</url-pattern>
+	</filter-mapping>
 </web-app>

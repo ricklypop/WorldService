@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CalendarService:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="CalendarService.war">
+      <element id="artifact" artifact-name="CalendarService:war exploded" />
+    </root>
+  </artifact>
+</component>
